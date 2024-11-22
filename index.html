@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriere personală</title>
+    <style>
+        /* Stiluri generale */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #D8BFD8;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #800080;
+            border-bottom: 2px solid #2C3E50;
+            padding-bottom: 5px;
+        }
+
+        /* Stil pentru imaginea de profil */
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 70%;
+            border: 3px solid #DDA0DD;
+            margin-top: 10px;
+        }
+
+        /* Stil pentru liste */
+        ul {
+            list-style-type: "\🎶";
+            padding-left: 20px;
+        }
+
+        /* Stil pentru secțiuni */
+        .section {
+            margin-bottom: 20px;
+            background-color: #e9f1f6;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stil pentru footer */
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Stil pentru linkuri */
+        a {
+            color: #DDA0DD;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Stil pentru citat */
+        blockquote {
+            font-style: italic;
+            color: #555;
+            margin: 0;
+            padding-left: 15px;
+            border-left: 4px solid #DDA0DD;
+            background-color: #f1f8fb;
+        }
+
+        /* Stil pentru buton */
+        button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #800080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #DDA0DD;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Descriere personală</h1>
+
+<div class="section">
+    <h2>Date de identificare</h2>
+    <p><strong>Nume și prenume:</strong> Panaitiu Georgiana-Andrea</p>
+    <p><strong>E-mail:</strong> <a href="mailto:georgianapanaititiu@gmail.com">georgianapanaititiu@gmail.com</a></p>
+</div>
+
+<div class="section">
+    <h2>Fotografie</h2>
+    <img id="profile-photo" src="lucifoto.ro-14.JPG" alt="Fotografie Georgiana Panaitiu">
+    <button onclick="changePhoto()">Vezi galeria foto</button>
+</div>
+
+<div class="section">
+    <h2>Citat reprezentativ</h2>
+    <blockquote id="representative-quote">"I tell my piano the things I used to tell you"</blockquote>
+    <button onclick="changeQuote()">Schimbă citatul</button>
+</div>
+
+<div class="section">
+    <h2>Discipline de interes</h2>
+    <ul>
+        <li>
+            <strong>Analiza Matematică</strong> (Anul 1) -
+            <a href="https://etti.utcluj.ro/planuri-de-invatamant.html" target="_blank">Descriere</a>
+        </li>
+        <li>
+            <strong>Tehnici de Programare</strong> (Anul 2) -
+            <a href="https://etti.utcluj.ro/planuri-de-invatamant.html" target="_blank">Descriere</a>
+        </li>
+        <li>
+            <strong>Rețele de Calculatoare</strong> (Anul 3) -
+            <a href="https://etti.utcluj.ro/planuri-de-invatamant.html" target="_blank">Descriere</a>
+        </li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Hobby-uri și activități</h2>
+    <ul>
+        <li>Muzica</li>
+        <li>Dansul</li>
+        <li>Vizionarea filmelor</li>
+    </ul>
+</div>
+
+<footer>
+    <p>Document creat de Georgiana-Andrea Panaitiu.</p>
+</footer>
+
+<script>
+    // Schimbare poze
+    const images = [
+        "lucifoto.ro-14.JPG",
+        "lucifoto.ro-2.JPG",
+        "lucifoto.ro-5.JPG",
+        "lucifoto.ro-7.JPG",
+        "lucifoto.ro-36.JPG",
+        "lucifoto.ro-73.JPG",
+        "lucifoto.ro-53.JPG"
+    ];
+    let currentIndex = 0;
+
+    function changePhoto() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("profile-photo").src = images[currentIndex];
+    }
+
+    // Schimbare citate
+    const quotes = [
+        "\"I tell my piano the things I used to tell you\"",
+        "\"Where words fail, music speaks\"",
+        "\"To play a wrong note is insignificant; to play without passion is inexcusable\"",
+        "\"Music can change the world because it can change people\""
+    ];
+    let currentQuoteIndex = 0;
+
+    function changeQuote() {
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        document.getElementById("representative-quote").textContent = quotes[currentQuoteIndex];
+    }
+</script>
+
+</body>
+</html>
